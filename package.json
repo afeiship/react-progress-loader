@@ -1,0 +1,17 @@
+{
+  "name": "react-md-docs",
+  "version": "0.0.0",
+  "description": "React docs use markdown language based on catalog.",
+  "homepage": "https://github.com/afeiship/react-md-docs",
+  "author": {
+    "name": "afei",
+    "email": "1290657123@qq.com"
+  },
+  "scripts": {
+    "build": "gulp"
+  },
+  "main": "dist/react-md-docs.js",
+  "license": "MIT",
+  "devDependencies": {
+  }
+}
