@@ -3,7 +3,7 @@
 
 
 ## resources:
-+ https://interactivethings.github.io/catalog/#/specimens/react
++ https://github.com/interactivethings/catalog
 
 ## todos:
 - [ ] todo list..
