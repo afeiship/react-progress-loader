@@ -22,6 +22,14 @@ export type ReactProgressLoaderProps = {
    * The z-index value.
    */
   zIndex?: number;
+  /**
+   * The start position.
+   */
+  start?: string;
+  /**
+   * The end position.
+   */
+  end?: string;
 } & HTMLAttributes<HTMLDivElement>;
 
 export default class ReactProgressLoader extends Component<ReactProgressLoaderProps> {
@@ -31,6 +39,8 @@ export default class ReactProgressLoader extends Component<ReactProgressLoaderPr
     visible: false,
     fixed: false,
     zIndex: 100,
+    start: '2.5%',
+    end: '22.5%',
   };
 
   private rootRef = React.createRef<HTMLDivElement>();
@@ -50,8 +60,29 @@ export default class ReactProgressLoader extends Component<ReactProgressLoaderPr
     this.rootVe?.to(visible!);
   }
 
+  get style() {
+    const { zIndex, start, end, style } = this.props;
+
+    return {
+      zIndex,
+      '--react-progress-loader-start': start,
+      '--react-progress-loader-end': end,
+      ...style,
+    };
+  }
+
   render() {
-    const { className, visible, fixed, style, zIndex, children, ...rest } = this.props;
+    const {
+      className,
+      visible,
+      fixed,
+      style,
+      zIndex,
+      children,
+      start,
+      end,
+      ...rest
+    } = this.props;
 
     return (
       <div
@@ -60,10 +91,7 @@ export default class ReactProgressLoader extends Component<ReactProgressLoaderPr
         data-component={CLASS_NAME}
         data-fixed={fixed}
         className={cx(CLASS_NAME, className)}
-        style={{
-          zIndex,
-          ...style,
-        }}
+        style={this.style}
         {...rest}
       >
         {children}
