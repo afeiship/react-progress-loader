@@ -1,17 +1,20 @@
 {
-  "name": "react-md-docs",
-  "version": "0.0.0",
-  "description": "React docs use markdown language based on catalog.",
-  "homepage": "https://github.com/afeiship/react-md-docs",
-  "author": {
-    "name": "afei",
-    "email": "1290657123@qq.com"
-  },
+  "name": "react-progress-loader",
+  "version": "1.0.0",
+  "description": "React progress loader.",
+  "homepage": "https://js.work",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "build": "gulp"
-  },
-  "main": "dist/react-md-docs.js",
-  "license": "MIT",
-  "devDependencies": {
+    "dev": "cd packages/example && yarn run dev",
+    "predocs": "rm -rf docs && node scripts/markdown.js",
+    "docs": "cd packages/example && yarn run build",
+    "postdocs": "cp -R packages/example/dist docs",
+    "preln:build": "yarn run docs",
+    "ln:build": "cd packages/lib && yarn run build",
+    "ln:publish": "cd packages/lib && yarn run release"
   }
 }
