@@ -38,6 +38,8 @@ npm install -S @jswork/react-progress-loader
         <div className="relative overflow-hidden h-80 bg-gray-200 my-4">
           <ReactProgressLoader
             visible={visible}
+            start={'5%'}
+            end={'30%'}
             className="border border-solid border-gray-300 bg-gray-50 px-10 py-2 text-sm text-white rounded-md"
           >
             <div className="fcc y">
