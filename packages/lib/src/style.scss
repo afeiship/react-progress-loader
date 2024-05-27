@@ -1,6 +1,7 @@
 .react-progress-loader {
-  --react-progress-loader-start: 22.5%;
-  --react-progress-loader-end: 37.5%;
+  --react-progress-loader-start: 2.5%;
+  --react-progress-loader-end: 22.5%;
+  user-select: none;
   left: 50%;
   top: var(--react-progress-loader-end);
   transform: translate(-50%, -50%);
