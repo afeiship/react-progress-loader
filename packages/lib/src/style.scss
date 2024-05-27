@@ -1,4 +1,10 @@
 .react-progress-loader {
+  --react-progress-loader-start: 22.5%;
+  --react-progress-loader-end: 37.5%;
+  left: 50%;
+  top: var(--react-progress-loader-end);
+  transform: translate(-50%, -50%);
+
   [hidden] {
     display: none;
   }
@@ -21,22 +27,22 @@
 
   @keyframes slide-in {
     from {
-      transform: translateY(-100%);
+      top: var(--react-progress-loader-start);
       opacity: 0;
     }
     to {
-      transform: translateY(0);
+      top: var(--react-progress-loader-end);
       opacity: 1;
     }
   }
 
   @keyframes slide-out {
     from {
-      transform: translateY(0);
+      top: var(--react-progress-loader-end);
       opacity: 1;
     }
     to {
-      transform: translateY(-100%);
+      top: var(--react-progress-loader-start);
       opacity: 0;
     }
   }

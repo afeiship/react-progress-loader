@@ -12,8 +12,8 @@ function App() {
       </div>
       <h1>react-progress-loader</h1>
       <div className="relative overflow-hidden size-40 bg-gray-200 my-4">
-        <ReactProgressLoader visible={visible} className="layout-abs-center-x">
-          <span className="ch bg-gray-300 p-2 rounded-full">Loading...</span>
+        <ReactProgressLoader visible={visible} className="debug-red bg-slate-500 px-5 py-2 text-sm text-white rounded-full">
+          Loading...
         </ReactProgressLoader>
       </div>
       <footer className="x-2">
