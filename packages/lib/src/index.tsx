@@ -30,10 +30,6 @@ export type ReactProgressLoaderProps = {
    * The end position.
    */
   end?: string;
-  /**
-   * The min duration between show and hide.
-   */
-  minDuration?: number;
 } & HTMLAttributes<HTMLDivElement>;
 
 export default class ReactProgressLoader extends Component<ReactProgressLoaderProps> {
@@ -45,17 +41,16 @@ export default class ReactProgressLoader extends Component<ReactProgressLoaderPr
     zIndex: 100,
     start: '2.5%',
     end: '22.5%',
-    minDuration: 300,
   };
 
   private rootRef = React.createRef<HTMLDivElement>();
   private rootVe: VisibleElement = null as any;
 
   componentDidMount() {
-    const { visible, minDuration } = this.props;
+    const { visible } = this.props;
     const { current } = this.rootRef;
     if (!current) return;
-    this.rootVe = new VisibleElement(current, { minDuration });
+    this.rootVe = new VisibleElement(current);
     this.rootVe.to(visible!);
   }
 
@@ -86,7 +81,6 @@ export default class ReactProgressLoader extends Component<ReactProgressLoaderPr
       children,
       start,
       end,
-      minDuration,
       ...rest
     } = this.props;
 
