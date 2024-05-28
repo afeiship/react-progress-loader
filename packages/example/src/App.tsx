@@ -14,6 +14,7 @@ function App() {
       <h1>react-progress-loader</h1>
       <div className="relative overflow-hidden h-80 bg-gray-200 my-4">
         <ReactProgressLoader
+          minDuration={500}
           visible={visible}
           start={'5%'}
           end={'30%'}
