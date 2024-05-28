@@ -31,12 +31,13 @@ npm install -S @jswork/react-progress-loader
     const [visible, setVisible] = useState(false);
     return (
       <div className="m-10 p-4 shadow bg-gray-100 text-gray-800 hover:shadow-md transition-all">
-        <div className="badge badge-warning absolute right-0 top-0 m-4">
+        <div className="badge badge-warning absolute right-0 top-0 m-2 mr-10">
           Build Time: {BUILD_TIME}
         </div>
         <h1>react-progress-loader</h1>
         <div className="relative overflow-hidden h-80 bg-gray-200 my-4">
           <ReactProgressLoader
+            minDuration={500}
             visible={visible}
             start={'5%'}
             end={'30%'}
